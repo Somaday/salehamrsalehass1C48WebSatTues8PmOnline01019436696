@@ -1,0 +1,29 @@
+.not-found {
+  padding-block: 120px;
+}
+.not-found__inner {
+  max-width: 480px;
+  margin-inline: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.not-found__aperture {
+  opacity: 0.9;
+  margin-bottom: 28px;
+}
+.not-found h1 {
+  font-size: 32px;
+  margin-top: 8px;
+}
+.not-found p {
+  margin-top: 16px;
+  color: var(--ink-muted);
+  line-height: 1.9;
+}
+.not-found__actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 32px;
+}

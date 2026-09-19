@@ -1,0 +1,328 @@
+/* ============================================================
+   عدسة — Design tokens
+  عدسة brand palette: darkroom charcoal with the primary orange.
+   ============================================================ */
+
+:root {
+  /* Base palette */
+  --bg: #1b1815;
+  --bg-elevated: #221d19;
+  --surface: #2a241f;
+  --surface-hover: #332c25;
+  --line: rgba(237, 231, 221, 0.1);
+  --line-strong: rgba(237, 231, 221, 0.22);
+
+  --ink: #ede7dd;
+  --ink-muted: #a79c8c;
+  --ink-faint: #766b5d;
+
+  --amber: #f85000;
+  --amber-deep: #c83f00;
+  --amber-soft: rgba(248, 80, 0, 0.12);
+  --amber-ink: #1b1815;
+
+  /* Category accents (named to match the source data) */
+  --cat-emerald: #7fb69e;
+  --cat-purple: #b49ad6;
+  --cat-blue: #7fa8d6;
+  --cat-orange: #de9457;
+
+  /* Type */
+  --font-display: "Noto Kufi Arabic", "IBM Plex Sans Arabic", sans-serif;
+  --font-body: "IBM Plex Sans Arabic", "Noto Kufi Arabic", sans-serif;
+
+  /* Layout */
+  --container: 1180px;
+  --radius-s: 3px;
+  --radius-m: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  background-image:
+    radial-gradient(
+      ellipse 900px 500px at 15% -10%,
+      rgba(248, 80, 0, 0.1),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 700px 500px at 100% 10%,
+      rgba(248, 80, 0, 0.05),
+      transparent 55%
+    );
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+  color: var(--ink);
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+::selection {
+  background: var(--amber);
+  color: var(--amber-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+  border-radius: var(--radius-s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- layout helpers ---------- */
+
+.page-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.page-shell main {
+  flex: 1;
+}
+
+.container {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.section {
+  padding-block: 72px;
+}
+
+.eyebrow {
+  font-size: 13px;
+  color: var(--amber);
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (max-width: 980px) {
+  .post-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .post-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: var(--radius-s);
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease,
+    transform 0.12s ease;
+}
+
+.btn:hover {
+  border-color: var(--amber);
+  background: rgba(248, 80, 0, 0.08);
+}
+
+.btn-primary {
+  background: var(--amber);
+  border-color: var(--amber);
+  color: var(--amber-ink);
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: var(--amber-deep);
+  border-color: var(--amber-deep);
+}
+
+/* ---------- badges ---------- */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+.badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.badge[data-cat="emerald"] {
+  color: var(--cat-emerald);
+  border-color: rgba(127, 182, 158, 0.35);
+}
+.badge[data-cat="purple"] {
+  color: var(--cat-purple);
+  border-color: rgba(180, 154, 214, 0.35);
+}
+.badge[data-cat="blue"] {
+  color: var(--cat-blue);
+  border-color: rgba(127, 168, 214, 0.35);
+}
+.badge[data-cat="orange"] {
+  color: var(--cat-orange);
+  border-color: rgba(222, 148, 87, 0.35);
+}
+
+/* ---------- aperture mark (brand + decorative) ---------- */
+
+.aperture {
+  --blade: var(--amber);
+  transform-origin: center;
+}
+
+.aperture .blade {
+  transform-origin: 32px 32px;
+  transform: rotate(var(--rot)) scale(0.25);
+  opacity: 0;
+  animation: blade-open 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.aperture .blade:nth-child(1) {
+  --rot: 0deg;
+  animation-delay: 0.02s;
+}
+.aperture .blade:nth-child(2) {
+  --rot: 72deg;
+  animation-delay: 0.09s;
+}
+.aperture .blade:nth-child(3) {
+  --rot: 144deg;
+  animation-delay: 0.16s;
+}
+.aperture .blade:nth-child(4) {
+  --rot: 216deg;
+  animation-delay: 0.23s;
+}
+.aperture .blade:nth-child(5) {
+  --rot: 288deg;
+  animation-delay: 0.3s;
+}
+
+@keyframes blade-open {
+  from {
+    transform: rotate(var(--rot)) scale(0.25);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(var(--rot)) scale(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aperture .blade {
+    animation: none;
+    opacity: 1;
+    transform: rotate(var(--rot)) scale(1);
+  }
+}
+
+/* ---------- scrollbar (webkit) ---------- */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-hover);
+  border-radius: 6px;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-block: 48px;
+  }
+  body {
+    font-size: 15px;
+  }
+}

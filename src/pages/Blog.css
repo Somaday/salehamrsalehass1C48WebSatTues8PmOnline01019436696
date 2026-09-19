@@ -1,0 +1,135 @@
+.blog-head {
+  margin-bottom: 36px;
+}
+.blog-head h1 {
+  font-size: 36px;
+  margin-top: 10px;
+}
+.blog-head p {
+  margin-top: 12px;
+  color: var(--ink-muted);
+  font-size: 14.5px;
+}
+
+.blog-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  padding: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+}
+
+.blog-search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-s);
+  background: var(--bg-elevated);
+  color: var(--ink-faint);
+}
+.blog-search:focus-within {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+.blog-search input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--ink);
+  font-size: 14.5px;
+  font-family: inherit;
+}
+.blog-search input::placeholder {
+  color: var(--ink-faint);
+}
+
+.blog-categories {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  flex: 2;
+}
+.blog-categories button {
+  padding: 9px 12px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-muted);
+  font: inherit;
+  font-size: 14px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.blog-categories button:hover,
+.blog-categories button.is-active {
+  border-color: var(--amber);
+  background: var(--amber-soft);
+  color: var(--amber-ink);
+}
+.blog-categories button:focus-visible {
+  border-color: var(--amber);
+}
+
+.blog-clear:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.view-toggle {
+  display: flex;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-s);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.view-toggle button {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: var(--bg-elevated);
+  color: var(--ink-faint);
+  border: none;
+  transition:
+    color 0.15s ease,
+    background 0.15s ease;
+}
+.view-toggle button + button {
+  border-inline-start: 1px solid var(--line);
+}
+.view-toggle button.is-active {
+  color: var(--amber-ink);
+  background: var(--amber);
+}
+
+.blog-empty {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--ink-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+@media (max-width: 720px) {
+  .blog-toolbar {
+    flex-wrap: wrap;
+  }
+  .blog-search {
+    flex-basis: 100%;
+  }
+  .blog-categories {
+    order: 3;
+    flex-basis: 100%;
+    justify-content: center;
+  }
+}
