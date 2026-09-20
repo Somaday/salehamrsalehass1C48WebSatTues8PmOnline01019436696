@@ -3,7 +3,9 @@
   border: 1px solid var(--line);
   border-radius: var(--radius-m);
   overflow: hidden;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 .post-card:hover {
   border-color: var(--line-strong);
@@ -88,7 +90,6 @@
   color: var(--ink-faint);
 }
 
-/* ---------- list view ---------- */
 .post-card--list {
   display: grid;
   grid-template-columns: 260px 1fr;

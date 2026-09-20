@@ -1,10 +1,4 @@
-/* ============================================================
-   عدسة — Design tokens
-  عدسة brand palette: darkroom charcoal with the primary orange.
-   ============================================================ */
-
 :root {
-  /* Base palette */
   --bg: #1b1815;
   --bg-elevated: #221d19;
   --surface: #2a241f;
@@ -21,17 +15,14 @@
   --amber-soft: rgba(248, 80, 0, 0.12);
   --amber-ink: #1b1815;
 
-  /* Category accents (named to match the source data) */
   --cat-emerald: #7fb69e;
   --cat-purple: #b49ad6;
   --cat-blue: #7fa8d6;
   --cat-orange: #de9457;
 
-  /* Type */
   --font-display: "Noto Kufi Arabic", "IBM Plex Sans Arabic", sans-serif;
   --font-body: "IBM Plex Sans Arabic", "Noto Kufi Arabic", sans-serif;
 
-  /* Layout */
   --container: 1180px;
   --radius-s: 3px;
   --radius-m: 6px;
@@ -124,8 +115,6 @@ ul {
   }
 }
 
-/* ---------- layout helpers ---------- */
-
 .page-shell {
   display: flex;
   flex-direction: column;
@@ -175,8 +164,6 @@ ul {
   }
 }
 
-/* ---------- buttons ---------- */
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -210,8 +197,6 @@ ul {
   background: var(--amber-deep);
   border-color: var(--amber-deep);
 }
-
-/* ---------- badges ---------- */
 
 .badge {
   display: inline-flex;
@@ -250,8 +235,6 @@ ul {
   color: var(--cat-orange);
   border-color: rgba(222, 148, 87, 0.35);
 }
-
-/* ---------- aperture mark (brand + decorative) ---------- */
 
 .aperture {
   --blade: var(--amber);
@@ -304,8 +287,6 @@ ul {
     transform: rotate(var(--rot)) scale(1);
   }
 }
-
-/* ---------- scrollbar (webkit) ---------- */
 
 ::-webkit-scrollbar {
   width: 10px;
