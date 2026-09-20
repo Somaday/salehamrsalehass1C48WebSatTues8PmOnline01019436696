@@ -8,7 +8,6 @@ const { siteInfo } = siteData;
 const links = [
   { to: "/", label: "الرئيسية" },
   { to: "/blog", label: "المدونة" },
-  { to: "/#about", label: "من نحن" },
 ];
 
 export default function Header() {

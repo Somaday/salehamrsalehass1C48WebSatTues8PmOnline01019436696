@@ -23,9 +23,6 @@ export default function Home() {
             <Link to="/blog" className="btn btn-primary">
               استكشف المقالات
             </Link>
-            <Link to="/#about" className="btn">
-              اعرف المزيد
-            </Link>
           </div>
         </div>
       </section>
@@ -85,18 +82,6 @@ export default function Home() {
               </Link>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="section about-strip" id="about">
-        <div className="container about-strip__inner">
-          <div>
-            <span className="eyebrow">عن عدسة</span>
-            <h2>مرحباً بك في عالم التصوير الفوتوغرافي.</h2>
-          </div>
-          <p>
-            انغمس في أسرار المحترفين ونصائح عملية لتطوير مهاراتك في التصوير.
-          </p>
         </div>
       </section>
 

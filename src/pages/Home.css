@@ -85,25 +85,6 @@
   border-block: 1px solid var(--line);
 }
 
-.about-strip {
-  border-bottom: 1px solid var(--line);
-}
-.about-strip__inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 72px;
-  align-items: end;
-}
-.about-strip h2 {
-  max-width: 18ch;
-  font-size: 30px;
-}
-.about-strip p {
-  max-width: 42ch;
-  color: var(--ink-muted);
-  font-size: 16px;
-  line-height: 2;
-}
 .category-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -201,10 +182,6 @@
 @media (max-width: 640px) {
   .hero h1 {
     font-size: 34px;
-  }
-  .about-strip__inner {
-    grid-template-columns: 1fr;
-    gap: 22px;
   }
   .category-grid {
     grid-template-columns: repeat(2, 1fr);

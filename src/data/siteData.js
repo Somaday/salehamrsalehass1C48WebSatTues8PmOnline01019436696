@@ -385,7 +385,6 @@ const siteInfo = {
   email: "hello@adasa.com",
   social: {
     twitter: "https://twitter.com/adasah",
-    github: "https://github.com/adasah",
     linkedin: "https://linkedin.com/company/adasah",
     youtube: "https://youtube.com/@adasah",
   },

@@ -8,7 +8,6 @@ const { siteInfo, categories } = siteData;
 export default function Footer() {
   const social = [
     { key: "twitter", label: "تويتر", href: siteInfo.social.twitter },
-    { key: "github", label: "جيت هاب", href: siteInfo.social.github },
     { key: "linkedin", label: "لينكدإن", href: siteInfo.social.linkedin },
     { key: "youtube", label: "يوتيوب", href: siteInfo.social.youtube },
   ];
